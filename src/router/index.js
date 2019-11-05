@@ -12,8 +12,21 @@ Vue.use(Router)
 
 var bar = { template: "<div>foot</div>" }
 
-export default new Router({
+var router = new Router({
   mode: "history",
+  scrollBehavior(to, from, savedPosition) {
+    console.log("锚点函数")
+    if(to.hash) {
+      return {
+        selector: to.hash
+      }
+    }else{
+      return {
+        x : 0,
+        y : 0
+      }
+    }
+  },
   routes: [
     {
       path: '/',
@@ -30,15 +43,19 @@ export default new Router({
       name: 'first',
       component: first,
       children: [{
-        path: 'son',
+        path: 'son/:id?',
         name: 'son',
         component: son
       },{
         path: 'son1',
-        component: son1
+        component: son1,
       },{
         path: 'son2',
-        component: son2
+        component: son2,
+        beforeEnter(to, from, next){
+          console.log("单个路由")
+          next()
+        }
       }]
     },
     {
@@ -47,3 +64,10 @@ export default new Router({
     }
   ]
 })
+router.beforeEach((to, from, next) => {
+  console.log("全局路由");
+  // console.log(from);
+  next()
+})
+
+export default router;

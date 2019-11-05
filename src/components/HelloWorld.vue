@@ -1,12 +1,12 @@
 <template>
   <el-container>
       <el-header style="height: 100px;line-height:100px">
-        <router-link to="/bar">bar</router-link>
         <router-link to="/first">first</router-link>
+        <router-link to="/bar">bar</router-link>
       </el-header>
       <el-container>
         <el-aside width="200px">Aside
-          <br>
+          <ws1></ws1>
         </el-aside>
         <el-container>
           <el-main>
@@ -25,12 +25,16 @@
 </template>
 
 <script>
+import ws1 from './text'
 export default {
   name: 'HelloWorld',
   data () {
     return {
       msg: 'Welcome to Your Vue.js App'
     }
+  },
+  components: {
+    ws1
   }
 }
 </script>
