@@ -2,7 +2,9 @@
   <el-container>
       <el-header style="height: 100px;line-height:100px">
         <router-link to="/first">first</router-link>
+        <router-link to="/second">second</router-link>
         <router-link to="/bar">bar</router-link>
+        <router-link to="/echarts">Echarts</router-link>
       </el-header>
       <el-container>
         <el-aside width="200px">Aside

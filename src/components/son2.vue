@@ -6,6 +6,10 @@
             {{num}}
             <button @click="de">-</button>
         </div>
+
+        <div class="wrap">
+            <div class="son">son</div>
+        </div>
     </div>
 </template>
 
@@ -30,3 +34,16 @@ export default {
     },
 }
 </script>
+
+<style lang="">
+    .wrap{
+        height: 200px;
+        border: 1px solid red;
+    }
+    .son{
+        width: 100px;
+        height: 100px;
+        background: red;
+        margin: 0 auto;
+    }
+</style>

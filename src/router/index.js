@@ -5,6 +5,11 @@ import first from '@/components/first'
 import son from '@/components/son'
 import son1 from '@/components/son1'
 import son2 from '@/components/son2'
+import second from '@/components/second'
+import person from '@/components/person'
+import person1 from '@/components/person1'
+import echarts from '@/components/echarts'
+import home from '@/view/home'
 
 
 
@@ -36,7 +41,7 @@ var router = new Router({
     {
       path: '/bar',
       name: 'bar',
-      component: bar
+      component: bar,
     },
     {
       path: '/first',
@@ -59,15 +64,26 @@ var router = new Router({
       }]
     },
     {
+      path: '/second',
+      component: second,
+      meta: {title:"123"},
+      children: [{
+        path: 'person',
+        component: person
+      },{
+        path: 'person1',
+        component: person1
+      }]
+    },
+    {
+      path: '/echarts',
+      component: echarts
+    },
+    {
       path: '*',
       redirect: '/'
     }
   ]
-})
-router.beforeEach((to, from, next) => {
-  console.log("全局路由");
-  // console.log(from);
-  next()
 })
 
 export default router;
