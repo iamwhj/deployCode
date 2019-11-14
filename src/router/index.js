@@ -36,7 +36,7 @@ var router = new Router({
     {
       path: '/',
       name: 'HelloWorld',
-      component: HelloWorld
+      component: home
     },
     {
       path: '/bar',
